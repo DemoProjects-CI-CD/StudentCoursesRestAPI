@@ -2,6 +2,9 @@ pipeline {
     agent { label 'MVN' }
     triggers { pollSCM('* * * * *') }
     stages {
+        stage ('user') {
+            sh 'whoami'
+        }
         stage ('VCS') {
             steps {
                 git url: 'https://github.com/DemoProjects-CI-CD/StudentCoursesRestAPI.git',
