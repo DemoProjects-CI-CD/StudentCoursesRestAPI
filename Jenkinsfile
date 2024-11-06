@@ -3,7 +3,7 @@ pipeline {
     triggers { pollSCM('* * * * *') }
     stages {
         stage ('user') {
-            sh 'whoami'
+            steps {sh 'whoami'}
         }
         stage ('VCS') {
             steps {
